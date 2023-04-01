@@ -36,7 +36,10 @@ If I could help you or if you like my work, you can buy me a [coffee, a beer or 
 
 ## Changelog ##
 
- * __master__ - (_2017-04-06_)
+ * __master__ - (_2023-04-01_)
+    - Fixed a bug in DLNA device discovery with fallback to UTF-8
+    
+ * __0.5.2.1__ - (_2017-04-06_)
     - Fixed a bug where the detection of DLNA devices failed when there were multiple network interfaces
     - The application now binds to all interfaces by default
     - When using multiple network interfaces the appropriate network address is being used for streaming (new dependency `python-pyroute2` (preferred) or `python-netaddr` (fallback))
