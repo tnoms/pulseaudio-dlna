@@ -107,7 +107,10 @@ class SSDPDiscover(object):
                 header, address = sock.recvfrom(self.BUFFER_SIZE)
                 if self.cb_on_device_response:
                     guess = chardet.detect(header)
-                    header = header.decode(guess['encoding'])
+                    try:
+                        header = header.decode(guess['encoding'])
+                    except Exception:
+                        header = header.decode('utf-8')
                     header = pulseaudio_dlna.plugins.dlna.ssdp._get_header_map(
                         header)
                     self.cb_on_device_response(header, address)
